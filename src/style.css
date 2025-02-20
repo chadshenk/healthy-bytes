@@ -1,5 +1,19 @@
 html {
-    background-color: rgb(24, 8, 116);
     color: rgb(255, 255, 255);
     font-family: sans-serif;
 }
+
+@-webkit-keyframes pulseColor {  
+    0% { background-color: rgb(24, 8, 116); }
+    50% { background-color: rgb(13, 58, 135); }
+    51% { background-color: rgb(67, 8, 116); }
+    100% { background-color: rgb(14, 125, 177); }
+  }
+  
+body {
+      height: 100px;
+      background-color: rgb(24, 8, 116);
+      -webkit-animation-name: pulseColor;  
+      -webkit-animation-iteration-count: infinite;  
+      -webkit-animation-duration: 5s; 
+  }   
