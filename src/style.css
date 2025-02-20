@@ -17,5 +17,16 @@ body {
       background-color: rgb(24, 8, 116);
       -webkit-animation-name: pulseColor;  
       -webkit-animation-iteration-count: infinite;  
-      -webkit-animation-duration: 8s; 
-  }   
+      -webkit-animation-duration: 10s; 
+}   
+
+p {
+    background-color: white;
+    width: fit-content;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: black;
+    border-radius: 2em;
+}
