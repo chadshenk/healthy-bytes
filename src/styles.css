@@ -13,7 +13,7 @@ html {
   }
   
 body {
-      height: 100px;
+      padding: 2em;
       background-color: rgb(24, 8, 116);
       -webkit-animation-name: pulseColor;  
       -webkit-animation-iteration-count: infinite;  
