@@ -1,10 +1,10 @@
-(function () {
-    window.addEventListener("DOMContentLoaded", (event) => {
-        init();
-    });
+import './styles.css';
 
-    function init() {
-        console.log("Loaded application script!");
-    }
+document.addEventListener("DOMContentLoaded", (event) => {
+    init();
+});
 
-})();
+function init() {
+    console.log("Loaded application script from webpack!");
+}
+
