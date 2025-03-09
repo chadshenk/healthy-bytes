@@ -4,18 +4,32 @@
   "description": "Nutrition scanner",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve",
+    "start": "webpack serve --server-type https",
     "build": "NODE_ENV=production webpack",
     "build:win": "set NODE_ENV=production&&webpack"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@ericblade/quagga2": "^1.8.4",
+    "@tailwindcss/postcss": "^4.0.12",
+    "autoprefixer": "^10.4.20",
+    "babel-loader": "^9.2.1",
     "css-loader": "^6.8.1",
     "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",
+    "postcss": "^8.5.3",
+    "postcss-loader": "^8.1.1",
+    "tailwindcss": "^3.4.17",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }

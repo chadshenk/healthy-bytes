@@ -12,9 +12,25 @@ module.exports = {
   },
   module: {
     rules: [
+      // Updated CSS rule to include PostCSS for Tailwind
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader' // Add PostCSS loader
+        ]
+      },
+      // Add Babel rule for JSX
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
+        }
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -24,6 +40,9 @@ module.exports = {
         },
       }
     ]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.json'] // Add JSX extension support
   },
   plugins: [
     new HtmlWebpackPlugin({
