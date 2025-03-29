@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import FoodList from './components/FoodList';
 import NutritionSummary from './components/NutritionSummary';
 import BarcodeScanner from './components/BarcodeScanner';
+import SplashScreen from './components/SplashScreen';
 
 function App() {
   const [foodItems, setFoodItems] = useState([]);
@@ -11,10 +12,20 @@ function App() {
   const [manualBarcode, setManualBarcode] = useState('');
   const [showManualEntry, setShowManualEntry] = useState(false);
 
-  // Request camera permission on mount
   useEffect(() => {
-    const requestCameraPermission = async () => {
+    const checkAndRequestCamera = async () => {
       try {
+        // Check if we already have permission
+        if (navigator.permissions && navigator.permissions.query) {
+          const permissionStatus = await navigator.permissions.query({ name: 'camera' });
+          
+          if (permissionStatus.state === 'granted') {
+            console.log("Camera permission already granted");
+            return; // No need to request again
+          }
+        }
+        
+        // Request permission if needed
         const stream = await navigator.mediaDevices.getUserMedia({ 
           video: { facingMode: 'environment' } 
         });
@@ -24,8 +35,8 @@ function App() {
         console.warn('Could not get camera permission:', error);
       }
     };
-
-    requestCameraPermission();
+  
+    checkAndRequestCamera();
   }, []);
 
   /// Fetch product info when barcode is detected
@@ -143,6 +154,7 @@ const handleBarcodeDetected = async (barcode) => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
+      <SplashScreen />
       <div className="container mx-auto px-4 py-6 max-w-md">
         {/* App Header */}
         <header className="text-center mb-6">
