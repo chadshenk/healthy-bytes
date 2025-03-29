@@ -12,20 +12,10 @@ function App() {
   const [manualBarcode, setManualBarcode] = useState('');
   const [showManualEntry, setShowManualEntry] = useState(false);
 
+  // Request camera permission on mount
   useEffect(() => {
-    const checkAndRequestCamera = async () => {
+    const requestCameraPermission = async () => {
       try {
-        // Check if we already have permission
-        if (navigator.permissions && navigator.permissions.query) {
-          const permissionStatus = await navigator.permissions.query({ name: 'camera' });
-          
-          if (permissionStatus.state === 'granted') {
-            console.log("Camera permission already granted");
-            return; // No need to request again
-          }
-        }
-        
-        // Request permission if needed
         const stream = await navigator.mediaDevices.getUserMedia({ 
           video: { facingMode: 'environment' } 
         });
@@ -35,8 +25,8 @@ function App() {
         console.warn('Could not get camera permission:', error);
       }
     };
-  
-    checkAndRequestCamera();
+
+    requestCameraPermission();
   }, []);
 
   /// Fetch product info when barcode is detected

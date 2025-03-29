@@ -17,16 +17,21 @@ const SplashScreen = () => {
     'rgb(24, 8, 116)'    // Back to deep purple
   ];
   
-  // Set up the color pulsing effect with longer duration
+  // Prevent scrolling when splash screen is active
   useEffect(() => {
-    let colorIndex = 0;
-    const intervalId = setInterval(() => {
-      colorIndex = (colorIndex + 1) % colors.length;
-      setBgColor(colors[colorIndex]);
-    }, 2500); // Longer interval to match your 10s total cycle (10s ÷ 4 transitions)
+    if (visible) {
+      // Prevent scrolling
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Restore scrolling when splash screen is dismissed
+      document.body.style.overflow = '';
+    }
     
-    return () => clearInterval(intervalId);
-  }, []);
+    return () => {
+      // Clean up
+      document.body.style.overflow = '';
+    };
+  }, [visible]);
 
   // Calculate how much to translate the element
   const getTranslateY = () => {
@@ -99,9 +104,9 @@ const SplashScreen = () => {
       onMouseLeave={handleMouseUp}
     >
       <div className="text-center">
-        <h1 className="text-5xl font-semibold text-white mb-2 tracking-wide font-sans">Healthy Bytes</h1>
+        <h1 className="text-3xl font-bold text-white mb-2 tracking-wide font-sans">Healthy Bytes</h1>
         <p className="text-white text-lg mb-6 max-w-xs mx-auto">Scan, analyze, and improve your nutrition with Healthy Bytes.</p>
-        <p className="mt-64 bg-white bg-opacity-20 text-white px-4 py-2 rounded-full inline-block mt-4">
+        <p className="bg-white bg-opacity-20 text-white px-4 py-2 rounded-full inline-block mt-4">
           ↑ Swipe up to continue ↑
         </p>
       </div>
