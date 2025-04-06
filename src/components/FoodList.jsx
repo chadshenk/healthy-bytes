@@ -5,13 +5,13 @@ function FoodList({ foodItems, onRemoveItem, onClearAll }) {
     return (
       <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
         <div className="p-4 border-b border-gray-700">
-          <h2 className="text-lg font-medium">Food Items</h2>
+          <h2 className="text-lg font-medium">Food List</h2>
         </div>
         <div className="p-8 text-center text-gray-400">
           <svg className="w-12 h-12 mx-auto mb-3 opacity-50" viewBox="0 0 24 24" fill="currentColor">
             <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z" />
           </svg>
-          <p>No food items yet</p>
+          <p>No food scanned yet</p>
           <p className="text-sm opacity-70 mt-1">Tap the scan button to add items</p>
         </div>
       </div>

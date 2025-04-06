@@ -5,10 +5,10 @@ const SplashScreen = () => {
   const [startY, setStartY] = useState(0);
   const [currentY, setCurrentY] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
-  const [bgColor, setBgColor] = useState('#3b82f6'); // Start with blue-500
+  const [bgColor, setBgColor] = useState('oklch(13% 0.028 261.692)');
   const screenRef = useRef(null);
   
-  // Colors to pulse between - from your CSS
+  // Colors to pulse between
   const colors = [
     'rgb(24, 8, 116)',   // Deep purple
     'rgb(15, 63, 146)',  // Deep blue
@@ -104,9 +104,13 @@ const SplashScreen = () => {
       onMouseLeave={handleMouseUp}
     >
       <div className="text-center">
-        <h1 className="text-3xl font-bold text-white mb-2 tracking-wide font-sans">Healthy Bytes</h1>
-        <p className="text-white text-lg mb-6 max-w-xs mx-auto">Scan, analyze, and improve your nutrition with Healthy Bytes.</p>
-        <p className="bg-white bg-opacity-20 text-white px-4 py-2 rounded-full inline-block mt-4">
+        <h1 className="text-6xl font-bold text-white mb-2 tracking-wide font-sans">Healthy Bytes</h1>
+        <p className="text-white text-lg my-2 max-w-xs mx-auto">Scan, analyze, and improve your nutrition with Healthy Bytes.</p>
+        <p className="text-green-500 text-sm my-2">INSTRUCTIONS</p>
+        <p className="text-gray-400 text-xl my-2">Tap 'Scan Food'</p>
+        <p className="text-gray-400 text-xl my-2">Point your camera at the barcode</p>
+        <p className="text-gray-400 text-xl my-2">Success!</p>
+        <p className="bg-green-500 text-white px-4 py-2 rounded-full inline-block mt-4">
           ↑ Swipe up to continue ↑
         </p>
       </div>

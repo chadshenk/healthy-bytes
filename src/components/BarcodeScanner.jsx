@@ -38,7 +38,7 @@ function BarcodeScanner({ onBarcodeDetected, onClose }) {
             facingMode: "environment",
             // Fixed, modest dimensions to prevent layout issues
             width: 640,
-            height: 480,
+            height: 1281,
           },
           // No area restriction - let visual guide match where Quagga scans
           singleChannel: false
