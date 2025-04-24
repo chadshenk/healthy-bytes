@@ -104,12 +104,18 @@ const SplashScreen = () => {
       onMouseLeave={handleMouseUp}
     >
       <div className="text-center">
-        <h1 className="text-6xl font-bold text-white mb-2 tracking-wide font-sans">Healthy Bytes</h1>
-        <p className="text-white text-lg my-2 max-w-xs mx-auto">Scan, analyze, and improve your nutrition with Healthy Bytes.</p>
-        <p className="text-green-500 text-sm my-2">INSTRUCTIONS</p>
-        <p className="text-gray-400 text-xl my-2">Tap 'Scan Food'</p>
-        <p className="text-gray-400 text-xl my-2">Point your camera at the barcode</p>
-        <p className="text-gray-400 text-xl my-2">Success!</p>
+      <h1 className="text-6xl font-bold text-white mb-2 tracking-wide font-sans">Healthy Bytes</h1>
+
+        <div className="bg-white bg-opacity-5 rounded-2xl p-4 m-4">
+          
+          <p className="text-white text-lg my-2 max-w-xs mx-auto">Scan, analyze, and improve your nutrition with Healthy Bytes.</p>
+          <p className="text-green-500 text-sm my-2">INSTRUCTIONS</p>
+          <p className="text-gray-400 text-xl my-2">Tap 'Scan Food'</p>
+          <p className="text-gray-400 text-xl my-2">Point your camera at the barcode</p>
+          <p className="text-gray-400 text-xl my-2">Success!</p>
+        </div>
+        
+        <p className="text-gray-500 text-xs my-2">This app provides nutritional information based on barcode scanning for convenience only. While we strive for accuracy, the information presented may not be complete or current due to limitations in the dataset. The nutritional data should not be used for medical decisions or to treat health conditions. Always verify critical information with product packaging. Consult healthcare professionals before making significant dietary changes or for nutrition advice related to medical conditions. By using this app, you acknowledge these limitations.</p>
         <p className="bg-green-500 text-white px-4 py-2 rounded-full inline-block mt-4">
           ↑ Swipe up to continue ↑
         </p>
