@@ -115,7 +115,7 @@ const SplashScreen = () => {
           <p className="text-gray-400 text-xl my-2">Success!</p>
         </div>
         
-        <p className="text-gray-500 text-xs my-2">This app provides nutritional information based on barcode scanning for convenience only. While we strive for accuracy, the information presented may not be complete or current due to limitations in the dataset. The nutritional data should not be used for medical decisions or to treat health conditions. Always verify critical information with product packaging. Consult healthcare professionals before making significant dietary changes or for nutrition advice related to medical conditions. By using this app, you acknowledge these limitations.</p>
+        <p className="text-gray-500 text-xs m-4">This app provides nutritional information based on barcode scanning for convenience only. While we strive for accuracy, the information presented may not be complete or current due to limitations in the dataset. The nutritional data should not be used for medical decisions or to treat health conditions. Always verify critical information with product packaging. Consult healthcare professionals before making significant dietary changes or for nutrition advice related to medical conditions. By using this app, you acknowledge these limitations.</p>
         <p className="bg-green-500 text-white px-4 py-2 rounded-full inline-block mt-4">
           ↑ Swipe up to continue ↑
         </p>
